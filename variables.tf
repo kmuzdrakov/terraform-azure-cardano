@@ -15,16 +15,19 @@
 variable "vault_name" {
   description = "Name of the Azure Key Vault that contains Cardano pool keys."
   type        = string
+  default     = "playline-kv"
 }
 
 variable "vault_resource_group_name" {
   type        = string
   description = "The name of the resource group in which to create Azure Key Vault resources. This resource group can differ from the main resource group. This is typically the case if you have a previously deployed (perhaps centrally controlled) Key Vault and Secrets."
+  default     = "cardano-pool-rg"
 }
 
 variable "env" {
   type        = string
   description = "(Required) Environment name: 'testnet' or 'mainnet'"
+  default     = "testnet"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -35,19 +38,19 @@ variable "env" {
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group in which to create resources."
-  default     = "testnet-rg"
+  default     = "cardano-pool-rg"
 }
 
 variable "location" {
   type        = string
   description = "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
-  default     = "West Europe"
+  default     = "Sweden Central"
 }
 
 variable "cluster_name" {
   description = "The name of the Managed Kubernetes Cluster to create. Changing this forces a new resource to be created."
   type        = string
-  default     = ""
+  default     = "playline-cardano"
 }
 
 variable "release_name" {
@@ -59,7 +62,7 @@ variable "release_name" {
 variable "domain_name_label" {
   description = "Set a public-facing DNS label of Cardano relays. This This publishes a fully qualified domain name for the Cardano service using Azure's public DNS servers and top-level domain. The annotation value must be unique within the Azure location, so it's recommended to use a sufficiently qualified label. Azure will then automatically append a default subnet, such as <location>.cloudapp.azure.com (where location is the region you selected), to the name you provide, to create the fully qualified DNS name."
   type        = string
-  default     = ""
+  default     = "playline"
 }
 
 variable "tags" {
