@@ -9,6 +9,10 @@ terraform {
   required_version = ">= 0.12.26"
 }
 
+provider "azurerm" {
+  features {}
+}
+
 resource "random_password" "redis" {
   length           = 24
   special          = true
