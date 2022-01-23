@@ -1,6 +1,7 @@
 variable "release_name" {
   type        = string
   description = "(Required) Release name."
+  default     = "testnet"
 }
 
 variable "namespace" {
@@ -12,11 +13,13 @@ variable "namespace" {
 variable "tenant_id" {
   type        = string
   description = "(Required) To get the tenant ID, select Properties for your Azure AD tenant."
+  default     = "1e45e563-58db-4e06-9fd7-cbe31f494b6f"
 }
 
 variable "dns_label_name" {
   type        = string
   description = "(Required) Set a public-facing DNS label of Cardano relays. This This publishes a fully qualified domain name for the Cardano service using Azure's public DNS servers and top-level domain. The annotation value must be unique within the Azure location, so it's recommended to use a sufficiently qualified label. Azure will then automatically append a default subnet, such as <location>.cloudapp.azure.com (where location is the region you selected), to the name you provide, to create the fully qualified DNS name."
+  default     = "playline"
 }
 
 variable "environment" {
@@ -76,7 +79,7 @@ variable "csi_secrets_store_provider_enabled" {
 variable "vault_name" {
   type        = string
   description = "Name of Azure Key Vault that contains Cardano Hot and Cold keys."
-  default     = ""
+  default     = "playline-kv"
 }
 
 variable "prometheus_enabled" {

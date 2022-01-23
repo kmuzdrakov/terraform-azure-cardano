@@ -1,21 +1,25 @@
 variable "resource_group_name" {
   type        = string
   description = "(Required) The name of the resource group in which to create cluster resources."
+  default     = "cardano-pool-rg"
 }
 
 variable "location" {
   type        = string
   description = "(Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+  default     = "Sweden Central"
 }
 
 variable "cluster_name" {
   type        = string
   description = "(Required) The name of the Managed Kubernetes Cluster to create. Changing this forces a new resource to be created."
+  default     = "playline-cardano"
 }
 
 variable "domain_name_label" {
   type        = string
   description = "DNS prefix specified when creating the managed cluster."
+  default     = "playline"
 }
 
 variable "kubernetes_version" {
@@ -57,11 +61,13 @@ variable "system_node_pool_vm_size" {
 variable "admin_username" {
   type        = string
   description = "(Required) The Admin Username for the Cluster. Changing this forces a new resource to be created."
+  default     = "kalinm"
 }
 
 variable "public_ssh_key" {
   type        = string
   description = "(Required) The Public SSH Key used to access the cluster. Changing this forces a new resource to be created."
+  default     = "az-pl-card-rsa"
 }
 
 variable "enable_log_analytics_workspace" {
