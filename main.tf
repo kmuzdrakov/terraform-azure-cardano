@@ -79,7 +79,7 @@ module "cardano_cluster" {
   system_node_pool_node_count = 1
   system_node_pool_vm_size    = "Standard_DS2_v2"
   user_node_pool_node_count   = 1
-  user_node_pool_vm_size      = "Standard_E4s_v4"
+  user_node_pool_vm_size      = "Standard_DS2_v"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -142,7 +142,7 @@ module "vault" {
   cluster_principal_id = module.cardano_cluster.cluster_principal_id
   kubelet_principal_id = module.cardano_cluster.kubelet_principal_id
   sku_name             = "standard"
-  allow_cidrs          = ["${chomp(data.http.myip.body)}/32"]
+  allow_cidrs          = ["${chomp(data.http.myip.body)}/32", "78.90.12.105/32", "85.91.136.52/12"]
   allow_azuread_group  = false
 }
 

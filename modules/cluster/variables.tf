@@ -45,13 +45,13 @@ variable "enable_host_encryption" {
 variable "system_node_pool_node_count" {
   type        = number
   description = "The initial number of nodes which should exist in this Node Pool."
-  default     = 2
+  default     = 1
 }
 
 variable "system_node_pool_vm_size" {
   type        = string
   description = "(Optional) The size of the Virtual Machine, such as Standard_DS2_v2."
-  default     = "Standard_B2s"
+  default     = "Standard_DS2_v2"
 }
 
 variable "admin_username" {
@@ -79,7 +79,7 @@ variable "user_node_pool_node_count" {
 variable "user_node_pool_vm_size" {
   type        = string
   description = "(Optional) The size of the Virtual Machine, such as Standard_DS2_v2."
-  default     = "Standard_E4s_v4"
+  default     = "Standard_DS2_v2"
 }
 
 variable "tags" {

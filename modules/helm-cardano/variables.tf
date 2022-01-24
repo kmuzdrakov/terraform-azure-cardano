@@ -82,7 +82,7 @@ variable "vault_name" {
 variable "prometheus_enabled" {
   type        = bool
   description = "Enable Helm Prometheus release."
-  default     = true
+  default     = false
 }
 
 variable "prometheus_version" {
