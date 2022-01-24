@@ -1,13 +1,11 @@
 variable "vault_name" {
   type        = string
   description = "(Required) Name of the Azure Key Vault."
-  default     = "playline-kv"
 }
 
 variable "location" {
   type        = string
   description = "(Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
-  default = "Sweden Central"
 }
 
 variable "resource_group_name" {
