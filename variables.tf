@@ -15,7 +15,7 @@
 variable "vault_name" {
   description = "Name of the Azure Key Vault that contains Cardano pool keys."
   type        = string
-  default     = "playline-kv"
+  default     = "cardano-kv"
 }
 
 variable "vault_resource_group_name" {
